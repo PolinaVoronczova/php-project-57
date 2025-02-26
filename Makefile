@@ -1,5 +1,5 @@
 start:
-	php artisan serve --host dpg-cuu2nc1opnds739s3te0-a
+	php artisan serve --host 0.0.0.0
 
 start-frontend:
 	npm run dev
@@ -8,7 +8,7 @@ setup:
 	composer install
 	cp -n .env.example .env
 	php artisan key:gen --ansi
-	touch database/database.sqlite
+	touch database/database.postgres
 	php artisan migrate
 	php artisan db:seed
 	npm ci
@@ -32,9 +32,6 @@ test:
 
 test-coverage:
 	XDEBUG_MODE=coverage php artisan test --coverage-clover build/logs/clover.xml
-
-deploy:
-	git push heroku
 
 lint:
 	composer phpcs
