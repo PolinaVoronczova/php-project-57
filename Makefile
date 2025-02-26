@@ -1,5 +1,5 @@
 start:
-	php artisan serve --host 0.0.0.0
+	php artisan serve --host dpg-cuu2nc1opnds739s3te0-a
 
 start-frontend:
 	npm run dev
